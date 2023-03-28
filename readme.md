@@ -3,19 +3,16 @@
 
 This library that allows you to easly implement a sliding gesture on an element by using pointer events 
 
+## Demo
+
+https://nicufarmache.github.io/slide-gesture-demo/
 
 
 ## Usage/Examples
-### Install pakage with npm:
-
-```bash
-npm install @nicufarmache/slide-gesture
-```
-
 ### Initialization
 
 ```javascript
-import { SlideGesture } from '@nicufarmache/slide-gesture'
+import { SlideGesture } from 'https://unpkg.com/@nicufarmache/slide-gesture/index.js'
 
 const slideGesture = new SlideGesture(
     el, // emelement to track
@@ -59,7 +56,7 @@ function handler(
 
 ### Example:
 ```javascript
-import { SlideGesture } from '@nicufarmache/slide-gesture'
+import { SlideGesture } from 'https://unpkg.com/@nicufarmache/slide-gesture/index.js'
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const el = document.getElementById("el"); // element you want
