@@ -21,11 +21,11 @@ export class SlideGesture {
   }
 
   removeListeners() {
-    this.el.removeEventListner("pointerdown", this.handleEvt.bind(this));
-    this.el.removeEventListner("pointermove", this.handleEvt.bind(this));
-    this.el.removeEventListner("pointerup", this.handleEvt.bind(this));
-    this.el.removeEventListner("pointercancel", this.handleEvt.bind(this));
-    window.removeEventListner("touchmove", this.handleScroll.bind(this));
+    this.el.removeEventListener("pointerdown", this.handleEvt.bind(this));
+    this.el.removeEventListener("pointermove", this.handleEvt.bind(this));
+    this.el.removeEventListener("pointerup", this.handleEvt.bind(this));
+    this.el.removeEventListener("pointercancel", this.handleEvt.bind(this));
+    window.removeEventListener("touchmove", this.handleScroll.bind(this));
     if(this.touchActions) this.el.style.touchAction = null;
   }
 
