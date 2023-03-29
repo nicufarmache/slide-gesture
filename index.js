@@ -49,7 +49,7 @@ export class SlideGesture {
       this.startY = evt.pageY;
     }
 
-    if (el.hasPointerCapture(evt.pointerId) && evt.type !== 'pointercancel' && (typeof this.callback) === 'function') {
+    if (this.el.hasPointerCapture(evt.pointerId) && evt.type !== 'pointercancel' && (typeof this.callback) === 'function') {
       const relativeX = evt.pageX - this.startX;
       const relativeY = evt.pageY - this.startY;
 
