@@ -8,6 +8,7 @@ export class SlideGesture {
     this.lastTotalY = 0;
     this.callback = callback;
     this.stopScrollDirection = stopScrollDirection;
+    this.addListeners();
   }
 
   addListeners() {

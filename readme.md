@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     touchActions: 'pan-y', // allow vertical scrolling
     stopScrollDirection: 'horizontal' // prevent scrolling after horizontal sliding starts
   });
-  slideGesture.addListeners();
 
 });
 ```
