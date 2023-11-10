@@ -1,0 +1,32 @@
+body {
+  display: grid;
+  place-items: center;
+  height: 1000px;
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image:  linear-gradient(#cee0e4 0.8px, transparent 0.8px), linear-gradient(to right, #cee0e4 0.8px, #ffffff 0.8px);
+  background-size: 16px 16px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+#el {
+  display: grid;
+  place-items: center;
+  height: 70px;
+  width: 300px;
+  background-color: coral;
+  transition: all 1s ease-out;
+  cursor: move;
+  cursor: grab;
+}
+
+#el.moving {
+  transition: none;
+  cursor: grabbing;
+}
+
+#el.canceled {
+  background-color: crimson;
+}

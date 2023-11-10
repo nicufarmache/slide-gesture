@@ -1,3 +1,19 @@
+type SlideGestureOptions = {
+  touchActions?: string,
+  stopScrollDirection?: 'horizontal' | 'vertical',
+}
+
+type SlideGestureEvent = {
+  startX: number,
+  startY: number,
+  relativeX: number,
+  relativeY: number,
+  totalX: number,
+  totalY: number,
+}
+
+type CallbackFn = (evt: PointerEvent, data: SlideGestureEvent) => void;
+
 export class SlideGesture {
   #el;
   #touchActions;
@@ -11,7 +27,11 @@ export class SlideGesture {
   #boundHandleScroll;
   #boundHandleEvt;
 
-  constructor(el, callback, { touchActions, stopScrollDirection } = {}){
+  constructor(
+    el :HTMLElement, 
+    callback: CallbackFn, 
+    { touchActions, stopScrollDirection }: SlideGestureOptions = {}
+  ){
     this.#el = el;
     this.#touchActions = touchActions;
     this.#callback = callback;
@@ -36,7 +56,7 @@ export class SlideGesture {
     this.#el.removeEventListener("pointerup", this.#boundHandleEvt);
     this.#el.removeEventListener("pointercancel", this.#boundHandleEvt);
     window.removeEventListener("touchmove", this.#boundHandleScroll);
-    if(this.#touchActions) this.#el.style.touchAction = null;
+    if(this.#touchActions) this.#el.style.removeProperty('touch-action');
   }
 
   #preventTouchScroll() {
@@ -47,13 +67,13 @@ export class SlideGesture {
     this.#shouldPreventScroll = false;
   }
 
-  #handleScroll(evt) {
+  #handleScroll(evt: TouchEvent) {
     if(this.#shouldPreventScroll){
       evt.preventDefault();
     }
   }
 
-  #handleEvt(evt) {  
+  #handleEvt(evt: PointerEvent) {  
     if (evt.type === 'pointerdown') {
       this.#el.setPointerCapture(evt.pointerId);
       this.#startX = evt.pageX;

@@ -2,9 +2,19 @@
   "name": "@nicufarmache/slide-gesture",
   "version": "1.1.2",
   "description": "A library for adding pointer events for sliding an element",
-  "main": "index.js",
+  "type": "module",
+  "files": ["dist"],
+  "main": "./dist/slide-gesture.cjs",
+  "module": "./dist/slide-gesture.js",
+  "exports": {
+    ".": {
+      "import": "./dist/slide-gesture.js",
+      "require": "./dist/slide-gesture.cjs"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build"
   },
   "repository": {
     "type": "git",
@@ -22,5 +32,9 @@
   "bugs": {
     "url": "https://github.com/nicufarmache/slide-gesture/issues"
   },
-  "homepage": "https://github.com/nicufarmache/slide-gesture#readme"
+  "homepage": "https://github.com/nicufarmache/slide-gesture#readme",
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  }
 }
