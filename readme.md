@@ -18,7 +18,7 @@ const slideGesture = new SlideGesture(
     el, // emelement to track
     handler, // event handler 
     { 
-      touchActions: 'pan-y', // allow vertical scrolling
+      touchActions: 'pan-y', // allow only vertical scrolling
       stopScrollDirection: 'horizontal' // prevent scrolling after horizontal sliding starts
     }
 );
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   };
 
   const slideGesture = new SlideGesture(el, handler, { 
-    touchActions: 'pan-y', // allow vertical scrolling
+    touchActions: 'pan-y', // allow only vertical scrolling
     stopScrollDirection: 'horizontal' // prevent scrolling after horizontal sliding starts
   });
 
