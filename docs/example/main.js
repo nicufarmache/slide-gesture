@@ -1,5 +1,15 @@
-// import { SlideGesture } from 'https://unpkg.com/@nicufarmache/slide-gesture/index.js';
-import { SlideGesture } from '../dist/index.js';
+async function importSlider() {
+  if (import.meta.env?.DEV)  {
+    return await import('../../dist/index.js');
+  } else {
+    return await import('https://unpkg.com/@nicufarmache/slide-gesture');
+  }
+}
+
+const { SlideGesture } = await importSlider();
+
+// you can just use the import bellow:
+// import { SlideGesture } from 'https://unpkg.com/@nicufarmache/slide-gesture';
 
 const manageVisualStuff = (el, evt, extra) => {
   console.log('position:', evt.type, extra.totalX, evt.pageX, extra);
