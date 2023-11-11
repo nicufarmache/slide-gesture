@@ -1,6 +1,6 @@
 {
   "name": "@nicufarmache/slide-gesture",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A library for adding pointer events for sliding an element",
   "type": "module",
   "files": [
