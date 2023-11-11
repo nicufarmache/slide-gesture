@@ -5,14 +5,14 @@ This library that allows you to easly implement a sliding gesture on an element 
 
 ## Demo
 
-https://nicufarmache.github.io/slide-gesture-demo/
+https://nicufarmache.github.io/slide-gesture/example
 
 
 ## Usage/Examples
 ### Initialization
 
 ```javascript
-import { SlideGesture } from 'https://unpkg.com/@nicufarmache/slide-gesture/'
+import { SlideGesture } from 'https://unpkg.com/@nicufarmache/slide-gesture/example/'
 
 const slideGesture = new SlideGesture(
     el, // emelement to track
