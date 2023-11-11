@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "es2021",
     "module": "commonjs",
+    "isolatedModules" : true,
+    "useDefineForClassFields": true,
     "sourceMap": true,
     "outDir": "./dist",
     "esModuleInterop": true,
