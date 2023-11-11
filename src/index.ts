@@ -1,6 +1,6 @@
 type SlideGestureOptions = {
   touchActions?: string,
-  stopScrollDirection?: 'horizontal' | 'vertical',
+  stopScrollDirection?: 'horizontal' | 'vertical' | 'both',
 }
 
 type SlideGestureEvent = {
@@ -30,7 +30,7 @@ export class SlideGesture {
   constructor(
     el :HTMLElement, 
     callback: CallbackFn, 
-    { touchActions, stopScrollDirection }: SlideGestureOptions = {}
+    { touchActions, stopScrollDirection = "both" }: SlideGestureOptions = {}
   ){
     this.#el = el;
     this.#touchActions = touchActions;
@@ -84,10 +84,16 @@ export class SlideGesture {
       const relativeX = evt.pageX - this.#startX;
       const relativeY = evt.pageY - this.#startY;
 
-      if ( this.#stopScrollDirection === 'horizontal' && Math.abs(relativeX / relativeY) > 1 ) {
+      const movedHorizontally = Math.abs(relativeX / relativeY) > 1;
+      const movedVertically = Math.abs(relativeX / relativeY) < 1;
+
+      if ( this.#stopScrollDirection === 'horizontal' && movedHorizontally ) {
         this.#preventTouchScroll();
       }
-      if ( this.#stopScrollDirection === 'vertical' && Math.abs(relativeX / relativeY) < 1 ) {
+      if ( this.#stopScrollDirection === 'vertical' && movedVertically ) {
+        this.#preventTouchScroll();
+      }
+      if ( this.#stopScrollDirection === 'both' ) {
         this.#preventTouchScroll();
       }
 
