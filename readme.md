@@ -12,7 +12,7 @@ https://nicufarmache.github.io/slide-gesture/example/
 ### Initialization
 
 ```javascript
-import { SlideGesture } from 'https://unpkg.com/@nicufarmache/slide-gesture'
+import { SlideGesture } from '@nicufarmache/slide-gesture'
 
 const slideGesture = new SlideGesture(
     el, // emelement to track
@@ -56,7 +56,7 @@ function handler(
 
 ### Example:
 ```javascript
-import { SlideGesture } from 'https://unpkg.com/@nicufarmache/slide-gesture/index.js'
+import { SlideGesture } from '@nicufarmache/slide-gesture'
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const el = document.getElementById("el"); // element you want
