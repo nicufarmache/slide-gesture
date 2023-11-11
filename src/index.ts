@@ -1,9 +1,9 @@
-type SlideGestureOptions = {
+export type SlideGestureOptions = {
   touchActions?: string,
   stopScrollDirection?: 'horizontal' | 'vertical' | 'both',
 }
 
-type SlideGestureEvent = {
+export type SlideGestureEvent = {
   startX: number,
   startY: number,
   relativeX: number,
@@ -12,7 +12,7 @@ type SlideGestureEvent = {
   totalY: number,
 }
 
-type CallbackFn = (evt: PointerEvent, data: SlideGestureEvent) => void;
+export type SlideGestureCallbackFn = (evt: PointerEvent, data: SlideGestureEvent) => void;
 
 export class SlideGesture {
   #el;
@@ -29,7 +29,7 @@ export class SlideGesture {
 
   constructor(
     el :HTMLElement, 
-    callback: CallbackFn, 
+    callback: SlideGestureCallbackFn, 
     { touchActions, stopScrollDirection = "both" }: SlideGestureOptions = {}
   ){
     this.#el = el;
